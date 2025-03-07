@@ -7,7 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 const contatos = [
     {
         nome: "BTC Conecta",
-        telefones: ["61 99670-1472", "61 99880-1234"], // Dois telefones
+        telefones: ["61 99670-1472", "61 9979-7179"], // Dois telefones
         instagram: "@btcconecta",
         instagramLink: "https://instagram.com/btcconecta",
         twitter: "@btcconecta",
@@ -63,7 +63,7 @@ const Contato = () => {
                             </Typography>
                             
                             {/* Telefones - Lado a lado */}
-                            <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', mb: 2 }}>
+                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', mb: 2 }}>
                                 {contato.telefones.map((telefone, i) => (
                                     <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                         <PhoneIcon sx={{ color: '#D17A00' }} />
@@ -73,7 +73,7 @@ const Contato = () => {
                             </Box>
 
                             {/* Redes Sociais - Embaixo dos números */}
-                            <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', justifyContent: 'center' }}>
+                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
                                 {/* Instagram */}
                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                     <IconButton href={contato.instagramLink} target="_blank" sx={{ color: '#D17A00' }}>
