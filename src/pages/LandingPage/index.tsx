@@ -80,7 +80,7 @@ const LandingPage = () => {
     }}
 >
     <img
-        src="/assets/logo1.png"
+        src="/assets/logo2.png"
         alt="Evento Bitcoin XP"
         style={{
             width: '100%', // Garante que a largura seja total
