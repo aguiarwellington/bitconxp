@@ -21,9 +21,8 @@ const eventImages = [
 ];
 
 const BitcoinBrasilia = () => {
-    let sliderRef = React.useRef<any>(null); // Correção do erro TypeScript
+    let sliderRef = React.useRef<any>(null); 
 
-    // Configuração do carrossel
     const settings = {
         dots: true,
         infinite: true,
@@ -33,7 +32,7 @@ const BitcoinBrasilia = () => {
         autoplay: true,
         autoplaySpeed: 3500,
         adaptiveHeight: true,
-        arrows: false, // Desabilita setas padrão do slick-carousel
+        arrows: false, 
     };
 
     return (
