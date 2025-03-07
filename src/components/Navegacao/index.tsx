@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Button, Box, Typography, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const menuItems = [
@@ -15,14 +15,14 @@ const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
 
-    // Rolar até a seção correspondente
+    // Função para rolar até a seção correspondente
     const handleScroll = (id: string) => {
         setTimeout(() => {
-            const element = document.querySelector(`[id="${id}"]`) as HTMLElement; // ✅ Converte para HTMLElement
+            const element = document.querySelector(`[id="${id}"]`) as HTMLElement;
             if (element) {
                 const offset = 80;
                 window.scrollTo({
-                    top: element.offsetTop - offset, // ✅ offsetTop agora é reconhecido corretamente
+                    top: element.offsetTop - offset,
                     behavior: 'smooth',
                 });
                 setActiveSection(id);
@@ -37,7 +37,7 @@ const Navbar = () => {
             let currentSection = 'home';
 
             menuItems.forEach((item) => {
-                const element = document.querySelector(`[id="${item.path}"]`) as HTMLElement; // ✅ Converte para HTMLElement
+                const element = document.querySelector(`[id="${item.path}"]`) as HTMLElement;
                 if (element) {
                     const rect = element.getBoundingClientRect();
                     if (rect.top <= 150 && rect.bottom >= 150) {
@@ -56,12 +56,14 @@ const Navbar = () => {
     return (
         <AppBar position="fixed" sx={{ backgroundColor: '#1a1a1a', color: '#fff', zIndex: 1000 }}>
             <Toolbar sx={{ justifyContent: 'space-between', paddingX: 2 }}>
-                {/* Logo */}
+                
+                {/* Logo (Aumentada) */}
                 <Box display="flex" alignItems="center" sx={{ cursor: 'pointer' }} onClick={() => handleScroll('home')}>
-                    <img src="/assets/bitcoin3.png" alt="BTC Conecta" style={{ width: '40px', height: 'auto', marginRight: '10px' }} />
-                    <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#ffa500' }}>
-                        BTC <span style={{ color: '#fff' }}>Conecta</span>
-                    </Typography>
+                    <img 
+                        src="/assets/logo.png" 
+                        alt="Logo" 
+                        style={{ width: '200px', height: 'auto' }} // Aumentei o tamanho do logo
+                    />
                 </Box>
 
                 {/* Menu Desktop */}

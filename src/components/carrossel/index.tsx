@@ -12,10 +12,10 @@ import 'slick-carousel/slick/slick-theme.css';
 // Lista de imagens do evento anterior
 const eventImages = [
     { src: '/assets/IMG_1677.JPEG', orientation: 'landscape' },
-    { src: '/assets/IMG_1563.JPEG', orientation: 'landscape' },
+    { src: '/assets/img_556.jpg', orientation: 'landscape' },
     { src: '/assets/img_1556.jpg', orientation: 'landscape' },
-    { src: '/assets/img-336.jpg', orientation: 'portrait' }, 
-    { src: '/assets/imgwell.jpeg', orientation: 'landscape' },
+    { src: '/assets/img778.JPEG', orientation: 'portrait' }, 
+    { src: '/assets/IMG_3622.JPEG', orientation: 'landscape' },
 ];
 
 const BitcoinBrasilia = () => {
@@ -37,7 +37,7 @@ const BitcoinBrasilia = () => {
     return (
         <Box
             sx={{
-                background: 'radial-gradient(circle, #1a1a1a 30%, #000000 90%)',
+                background: 'linear-gradient(to right, #e69c47, #002f87)',
                 color: '#fff',
                 padding: '80px 20px',
                 textAlign: 'center',
@@ -45,13 +45,13 @@ const BitcoinBrasilia = () => {
             }}
         >
             {/* Título da Seção */}
-            <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#E28D1C', mb: 4 }}>
-                🚀 Bitcoin Brasília - Relembre o Último Evento!
+            <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 4, color: '#fff' }}>
+                Bitcoin, <span style={{ color: '#E28D1C' }}>Web3</span> e Conexões Reais – Veja Como Foi!
             </Typography>
 
             <Typography variant="body1" sx={{ color: '#ccc', mb: 4, maxWidth: '800px', margin: '0 auto' }}>
-                O <strong>Bitcoin Brasília</strong> reuniu os maiores entusiastas do setor, proporcionando um ambiente único de aprendizado, conexões e inovação. 
-                Reviva os melhores momentos do evento passado e prepare-se para o <strong>Bitcoin Fortaleza 2025</strong>!
+            Confira os registros de eventos que marcaram a comunidade Bitcoin e Web3! 💡🔥
+            Cada imagem conta uma história de aprendizado, networking e inovação. Agora, chegou a sua vez de fazer parte dessa revolução!
             </Typography>
 
             {/* Carrossel de imagens ajustado */}

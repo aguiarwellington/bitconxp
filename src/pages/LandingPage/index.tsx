@@ -17,6 +17,9 @@ import BitcoinBrasilia from '../../components/carrossel';
 import Palestrantes from '../../components/Palestrantes';
 import { FaWaze } from 'react-icons/fa';
 import { SiGooglemaps } from 'react-icons/si';
+import Patrocinio from '../../components/Patrocinio';
+import Contato from '../../components/Contato';
+import Sobre from '../../components/sobre';
 
 
 const AnimatedBorder = () => (
@@ -47,27 +50,26 @@ const AnimatedBorder = () => (
 
 
 const benefitsParticipants = [
-    'Aprendizado de alto nível',
-    'Criptoconexões estratégicas',
-    'Networking',
-    'Conforto e Organização',
-    'Autógrafo de Livros e Fotografias',
-    'Leitura da atual conjuntura geopolítica',
-    'Esclarecimento de dúvidas com especialistas',
-    'Ambiente seguro',
-    'Entre outros...'
+    '🎓 Aprendizado de Alto Nível – Workshops e palestras com especialistas em Bitcoin e Web3.',
+    '🤝 Conexões Estratégicas – Expanda sua rede com entusiastas e profissionais do mercado.',
+    '🌍 Networking de Qualidade – Troque experiências no ambiente ideal para conexões valiosas.',
+    '🏛️ Experiência Confortável e Organizada – Infraestrutura pensada para seu bem-estar.',
+    '✍️ Sessão de Autógrafos e Fotografias – Encontro com autores e especialistas do setor.',
+    '📊 Visão Atualizada do Mercado – Discussões sobre o cenário geopolítico e impactos no setor.',
+    '💬 Dúvidas Esclarecidas – Interação direta com especialistas para respostas em tempo real.',
+    '🔐 Segurança Garantida – Ambiente monitorado para sua tranquilidade.',
+    '✨ E muito mais!'
 ];
 
 const benefitsSponsors = [
-    'Backdrop (Painel atrás das atrações)',
-    'Vídeo Institucional no telão do evento (até 1 minuto)',
-    'Menção da empresa pelo mestre de cerimônias',
-    'Logomarca em todos os materiais do evento (Cartazes, Panfletos)',
-    'Espaço para montagem de Stand',
-    'Menções, marcações e repostagens no Instagram do influenciador',
-    'Menções, marcações e repostagens no Instagram do evento',
-    'Vagas de estacionamento, acessos e assentos privilegiados',
-    'Entre outros...'
+    '🚀 Alta Visibilidade para Sua Marca – Sua empresa em destaque no universo cripto.',
+    '🎞️ Vídeo Institucional no Telão – Exibição de até 1 minuto para impactar o público.',
+    '🎙️ Menção Especial no Evento – O mestre de cerimônias apresentando sua marca.',
+    '🏷️ Logomarca em Todos os Materiais do Evento – Cartazes, panfletos e muito mais.',
+    '🎪 Espaço Exclusivo para Stand – Interação direta com o público e geração de leads.',
+    '📢 Promoção nas Redes Sociais – Menções, marcações e repostagens no Instagram do evento e de influenciadores.',
+    '🅿️ Benefícios VIP – Estacionamento, acessos e assentos privilegiados.',
+    '✨ E outras oportunidades exclusivas!'
 ];
 
 
@@ -118,251 +120,131 @@ const TimelineSchedule = ({ schedule }) => (
 const LandingPage = () => {
     return (
         <Box sx={{ backgroundColor: '#4a3f24', color: '#fff', overflowX: 'hidden', minHeight: '100vh' }}>
+
             <Navbar />
+
+            {/* Seção Home */}
             <Box
-    sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' }, 
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: { xs: 'auto', md: 'calc(100vh - 80px)' },
-        padding: { xs: '20px', md: '0 5%' }, 
-        textAlign: { xs: 'center', md: 'left' } 
-    }}
->
-    {/* Texto da Seção */}
-    <Box id="home" sx={{ maxWidth: { xs: '100%', md: '50%' }, mb: { xs: 4, md: 0 } }}>
-        <Typography
-            variant="h2"
-            sx={{ 
-                color: '#E28D1C', 
-                fontWeight: 'bold', 
-                mb: 2,
-                fontSize: { xs: '32px', md: '48px' } // Ajusta tamanho do título no mobile
-            }}
-        >
-            Impulsione seu
-        </Typography>
-        <Typography
-            variant="h2"
-            sx={{ 
-                color: '#fff', 
-                fontWeight: 'bold', 
-                mb: 2,
-                fontSize: { xs: '32px', md: '48px' }
-            }}
-        >
-            conhecimento sobre bitcoins
-        </Typography>
-        <Typography
-            variant="body1"
-            sx={{ color: '#d3d3d3', mb: 4, fontSize: { xs: '14px', md: '16px' } }}
-        >
-            Protegendo Seu Patrimônio na Nova Era Digital
-        </Typography>
-        <Box display="flex" gap={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
-            <Button
-                variant="contained"
-                sx={{ 
-                    backgroundColor: '#E28D1C', 
-                    color: '#fff', 
-                    borderRadius: '20px', 
-                    padding: '10px 20px', 
-                    fontSize: { xs: '14px', md: '16px' }
+                id="home"
+                sx={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '105vh',
+                    
+                    backgroundImage: 'url(/assets/main.png)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
                 }}
             >
-                Sobre o evento
-            </Button>
-            <Button
-                variant="outlined"
-                sx={{ 
-                    color: '#fff', 
-                    borderColor: '#fff', 
-                    borderRadius: '20px', 
-                    padding: '10px 20px',
-                    fontSize: { xs: '14px', md: '16px' }
-                }}
-            >
-                Saiba mais
-            </Button>
-        </Box>
-    </Box>
-
-    {/* Imagem e Ícones de Moedas */}
-    <Box
-        sx={{
-            position: 'relative',
-            width: { xs: '100%', md: '50%' },
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}
-    >
-        {/* Moeda principal */}
-        <motion.img
-            src="/assets/Bitcoin.png"
-            alt="Bitcoin Coin"
-            style={{ 
-                width: '100%', 
-                maxWidth: '300px', 
-                height: 'auto', 
-                cursor: 'pointer' 
-            }}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ rotate: 360 }}
-            transition={{ duration: 0.6 }}
-        />
-
-        {/* Imagens orbitando */}
-        {[
-            { src: '/assets/imper.png', top: '-30px', left: '50px' },
-            { src: '/assets/bitcoin2.png', top: '50px', left: '-80px' },
-            { src: '/assets/olho.png', bottom: '20px', left: '60px' },
-            { src: '/assets/bitcoin2.png', top: '-40px', right: '70px' },
-            { src: '/assets/bitcoin2.png', bottom: '-10px', right: '100px' },
-        ].map((image, index) => (
-            <motion.img
-                key={index}
-                src={image.src}
-                alt={`Floating Image ${index + 1}`}
-                style={{
-                    position: 'absolute',
-                    width: '50px',
-                    height: '50px',
-                    top: image.top,
-                    left: image.left,
-                    right: image.right,
-                    bottom: image.bottom,
-                }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: [10, -10, 10] }}
-                transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
-            />
-        ))}
-    </Box>
-</Box>
-
-            {/* Seção Sobre o Evento com Design Atrativo */}
-            <Box id="sobre" sx={{ padding: '100px 20px', backgroundColor: '#1a1a1a' }}>
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <Typography variant="h2" sx={{ color: '#fff', fontWeight: 'bold', mb: 4, textAlign:"center" }}>
-                        Sobre o evento
-                    </Typography>
-                    <Box display="flex" gap={6}>
-                    <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Box sx={{ maxWidth: '600px', textAlign: 'left', ml: 10 }}>
-                            <Typography variant="h5" sx={{ color: '#E28D1C', mb: 2 }}>
-                                Dois dias repletos de conhecimento e conexões valiosas entre entusiastas do Bitcoin e WEB3.
-                            </Typography>
-                            <Typography variant="body1" sx={{ color: '#fff', mb: 4 }}>
-                                Aprenda com os melhores e esteja preparado para aprimorar a proteção do seu patrimônio e potencializar seus lucros.
-                            </Typography>
-                        </Box>
-    </Box>
-                        <Box flex={1} sx={{ marginLeft: '150px' }}>
-                            <List>
-                                {['Cursos', 'Palestras (Com especialistas em Bitcoin e WEB3)', 'Networking/Mesa Redonda', 'Análise da Macro e Micro Economia'].map((text, index) => (
-                                    <ListItem key={index} disableGutters>
-                                        <ListItemIcon>
-                                            <ArrowForwardIosIcon sx={{ color: '#E28D1C' }} />
-                                        </ListItemIcon>
-                                        <ListItemText primary={text} sx={{ color: '#fff' }} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Box>
-                    </Box>
-                </motion.div>
             </Box>
-
-            {/* Seção Palestrantes e Workshops */}
-            <Box id="palestrantes" sx={{ padding: '100px 20px', backgroundColor: '#1a1a1a' }}>
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <Typography variant="h2" sx={{ color: '#fff', fontWeight: 'bold', textAlign:'center', mb: 4 }}>
-                    Palestrantes <span style={{ color: '#E28D1C' }}>e Workshops</span>
-                </Typography>
-                    <Grid container spacing={4}>
-                        {['Cidade Bitcoin', 'Realidade Aumentada', 'Painel Interativo de Trading', 'Internet Descentralizada', 'Pagamento Lightning Only', 'Painel Ultra-Restrito', 'Hackathon de Privacidade', 'Workshops Experienciais'].map((item, index) => (
-                            <Grid item xs={12} md={4} key={index}>
-                                <Card sx={{ borderRadius: '16px', backgroundColor: '#252525', textAlign:"Center"  }}>
-                                    <CardContent>
-                                        <Typography variant="h6" sx={{ color: '#E28D1C', mb: 2 }}>
-                                            {item}
-                                        </Typography>
-                                        <Typography variant="body2" sx={{ color: '#ffff' }}>
-                                            Descrição do workshop {item}. Saiba mais sobre as experiências e aprendizados disponíveis.
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </motion.div>
-            </Box>
-
-
-           
             
+            {/* Seção Sobre o Evento com Design Atrativo */}
+            <Sobre />
+
             {/* Seção Palestrantes */}
             <Palestrantes />
 
 
             
-            <Box id="beneficios" sx={{ padding: '100px 20px', backgroundColor: '#1a1a1a' }}>
-                <Typography variant="h2" sx={{ color: '#E28D1C', fontWeight: 'bold', mb: 4, textAlign: 'center' }}>
-                    Benefícios do Evento
+            <Box
+    id="beneficios"
+    sx={{
+        padding: '100px 5%',
+        background: 'linear-gradient(to right, #e69c47, #002f87)',
+        textAlign: 'center',
+    }}
+>
+    <Typography
+        variant="h2"
+        sx={{
+            color: '#fff',
+            fontWeight: 'bold',
+            mb: 6,
+            textTransform: 'uppercase',
+            fontSize: { xs: '32px', md: '48px' },
+            textShadow: '3px 3px 5px rgba(0,0,0,0.3)',
+        }}
+    >
+        Benefícios <span style={{ color: '#FF8C00' }}>do Evento</span>
+    </Typography>
+
+    <Grid container spacing={4} justifyContent="center">
+        {/* Bloco de Participantes */}
+        <Grid item xs={12} md={6} sx={{ display: 'flex' }}>
+            <Box
+                sx={{
+                    background: 'linear-gradient(135deg, #FF8C00, #004aad)',
+                    padding: '40px',
+                    borderRadius: '16px',
+                    boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
+                    transition: '0.3s',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    height: '100%',
+                    '&:hover': {
+                        transform: 'scale(1.03)',
+                        boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
+                    },
+                }}
+            >
+                <Typography variant="h3" sx={{ color: '#fff', mb: 4 }}>
+                    🎟 Para os Participantes
                 </Typography>
-                <Grid container spacing={6}>
-                    <Grid item xs={12} md={6}>
-                        <Box sx={{ backgroundColor: '#252525', padding: '40px', borderRadius: '16px' }}>
-                            <Typography variant="h3" sx={{ color: '#E28D1C', mb: 4 }}>
-                                Para os Participantes
-                            </Typography>
-                            <List>
-                                {benefitsParticipants.map((benefit, index) => (
-                                    <ListItem key={index} disableGutters>
-                                        <ListItemIcon>
-                                            <ArrowForwardIosIcon sx={{ color: '#E28D1C' }} />
-                                        </ListItemIcon>
-                                        <ListItemText primary={benefit} sx={{ color: '#fff' }} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={6}>
-                        <Box sx={{ backgroundColor: '#252525', padding: '40px', borderRadius: '16px' }}>
-                            <Typography variant="h3" sx={{ color: '#E28D1C', mb: 4 }}>
-                                Para os Patrocinadores
-                            </Typography>
-                            <List>
-                                {benefitsSponsors.map((benefit, index) => (
-                                    <ListItem key={index} disableGutters>
-                                        <ListItemIcon>
-                                            <ArrowForwardIosIcon sx={{ color: '#E28D1C' }} />
-                                        </ListItemIcon>
-                                        <ListItemText primary={benefit} sx={{ color: '#fff' }} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Box>
-                    </Grid>
-                </Grid>
+                <List sx={{ padding: 0 }}>
+                    {benefitsParticipants.map((benefit, index) => (
+                        <ListItem key={index} disableGutters sx={{ padding: '5px 0' }}>
+                            <ListItemText primary={benefit} sx={{ color: '#fff', fontSize: '18px' }} />
+                        </ListItem>
+                    ))}
+                </List>
             </Box>
+        </Grid>
+
+        {/* Bloco de Patrocinadores */}
+        <Grid item xs={12} md={6} sx={{ display: 'flex' }}>
+            <Box
+                sx={{
+                    background: 'linear-gradient(135deg, #004aad, #FF8C00)',
+                    padding: '40px',
+                    borderRadius: '16px',
+                    boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
+                    transition: '0.3s',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    height: '100%',
+                    '&:hover': {
+                        transform: 'scale(1.03)',
+                        boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
+                    },
+                }}
+            >
+                <Typography variant="h3" sx={{ color: '#fff', mb: 4 }}>
+                    💼 Para os Patrocinadores
+                </Typography>
+                <List sx={{ padding: 0 }}>
+                    {benefitsSponsors.map((benefit, index) => (
+                        <ListItem key={index} disableGutters sx={{ padding: '5px 0' }}>
+                            <ListItemText primary={benefit} sx={{ color: '#fff', fontSize: '18px' }} />
+                        </ListItem>
+                    ))}
+                </List>
+            </Box>
+        </Grid>
+    </Grid>
+</Box>
 
 
-            <Box id="data" sx={{ padding: '100px 20px', backgroundColor: '#1a1a1a' }}>
+
+        <Patrocinio />
+
+
+
+            <Box id="data" sx={{ padding: '100px 20px', background: 'linear-gradient(to right, #e69c47, #002f87)' }}>
                 <Typography variant="h2" sx={{ color: '#E28D1C', fontWeight: 'bold', mb: 4, textAlign: 'center' }}>
                     <CalendarMonthIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
                     Data do Evento
@@ -378,61 +260,105 @@ const LandingPage = () => {
             </Box>
 
 
-            <Box id="local" sx={{ padding: '10px 20px', backgroundColor: '#1a1a1a', textAlign: 'center' }}>
-                <Typography variant="h2" sx={{ color: '#E28D1C', fontWeight: 'bold', mb: 4 }}>
-                    <PlaceIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
-                    Local do Evento
+            <Box id="local" sx={{ padding: '100px 5%', background: 'linear-gradient(to right, #e69c47, #002f87)', textAlign: 'center' }}>
+    <Typography
+        variant="h2"
+        sx={{
+            color: '#fff',
+            fontWeight: 'bold',
+            mb: 6,
+            textTransform: 'uppercase',
+            fontSize: { xs: '32px', md: '48px' },
+            textShadow: '3px 3px 5px rgba(0,0,0,0.3)',
+        }}
+    >
+        <PlaceIcon sx={{ verticalAlign: 'middle', fontSize: '42px', color: '#FF8C00' }} /> Local do Evento
+    </Typography>
+
+    <Grid container spacing={4} justifyContent="center">
+        {/* Local 1 */}
+        <Grid item xs={12} md={5}>
+            <Box
+                sx={{
+                    background: 'linear-gradient(135deg, #FF8C00, #004aad)',
+                    padding: '30px',
+                    borderRadius: '16px',
+                    boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
+                    transition: '0.3s',
+                    '&:hover': {
+                        transform: 'scale(1.03)',
+                        boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
+                    },
+                }}
+            >
+                <img src="/assets/Unifra.jpg" alt="Local 1" style={{ width: '100%', borderRadius: '12px' }} />
+                <Typography variant="h6" color="white" sx={{ mt: 3, fontWeight: 'bold' }}>
+                    📍 R. Padre Ibiapina, 1129 - Centro, Fortaleza - CE, 60010-260
                 </Typography>
-                <Grid container spacing={4} justifyContent="center">
-                    <Grid item xs={12} md={5}>
-                        <Box sx={{ backgroundColor: '#252525', padding: '20px', borderRadius: '10px' }}>
-                            <img src="/assets/Unifra.jpg" alt="Local 1" style={{ width: '100%', borderRadius: '10px' }} />
-                            <Typography variant="h6" color="white" sx={{ mt: 2 }}>
-                                R. Padre Ibiapina, 1129 - Centro, Fortaleza - CE, 60010-260
-                            </Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} md={5}>
-                        <Box sx={{ backgroundColor: '#252525', padding: '20px', borderRadius: '10px' }}>
-                            <img src="/assets/Unifametro.jpg" alt="Local 2" style={{ width: '100%', borderRadius: '10px' }} />
-                            <Typography variant="h6" color="white" sx={{ mt: 2 }}>
-                                Centro de Eventos BTC Fortaleza
-                            </Typography>
-                        
-                            Acesse o mapa pelo seu aplicativo favorito:
-
-                            <Grid item>
-                            <IconButton
-                                href="https://www.google.com/maps?q=R.+Padre+Ibiapina,+1129+-+Centro,+Fortaleza+-+CE"
-                                target="_blank"
-                                sx={{ color: '#34A853', fontSize: 50 }}
-                            >
-                                <SiGooglemaps size={40} />
-                            </IconButton>
-
+                <Box sx={{ mt: 2 }}>
+                    <IconButton
+                        href="https://www.google.com/maps?q=R.+Padre+Ibiapina,+1129+-+Centro,+Fortaleza+-+CE"
+                        target="_blank"
+                        sx={{ color: '#34A853', fontSize: 50 }}
+                    >
+                        <SiGooglemaps size={36} />
+                    </IconButton>
                     <IconButton
                         href="https://waze.com/ul?q=R.+Padre+Ibiapina,+1129+-+Centro,+Fortaleza+-+CE"
                         target="_blank"
                         sx={{ color: '#05C4F9', fontSize: 50 }}
                     >
-                        <FaWaze size={40} />
+                        <FaWaze size={36} />
                     </IconButton>
-                        </Grid>
-   
-                        </Box>
-
-                        
-                    </Grid>
-                </Grid>
-                
+                </Box>
             </Box>
+        </Grid>
+
+        {/* Local 2 */}
+        <Grid item xs={12} md={5}>
+            <Box
+                sx={{
+                    background: 'linear-gradient(135deg, #004aad, #FF8C00)',
+                    padding: '30px',
+                    borderRadius: '16px',
+                    boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
+                    transition: '0.3s',
+                    '&:hover': {
+                        transform: 'scale(1.03)',
+                        boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
+                    },
+                }}
+            >
+                <img src="/assets/Unifametro.jpg" alt="Local 2" style={{ width: '100%', borderRadius: '12px' }} />
+                <Typography variant="h6" color="white" sx={{ mt: 3, fontWeight: 'bold' }}>
+                    📍 Centro de Eventos BTC Fortaleza
+                </Typography>
+                <Box sx={{ mt: 2 }}>
+                    <IconButton
+                        href="https://www.google.com/maps?q=Centro+de+Eventos+BTC+Fortaleza"
+                        target="_blank"
+                        sx={{ color: '#34A853', fontSize: 50 }}
+                    >
+                        <SiGooglemaps size={36} />
+                    </IconButton>
+                    <IconButton
+                        href="https://waze.com/ul?q=Centro+de+Eventos+BTC+Fortaleza"
+                        target="_blank"
+                        sx={{ color: '#05C4F9', fontSize: 50 }}
+                    >
+                        <FaWaze size={36} />
+                    </IconButton>
+                </Box>
+            </Box>
+        </Grid>
+    </Grid>
+</Box>
 
             <Ingressos />
 
             <BitcoinBrasilia />
 
-           
-
+            <Contato />
 
             <Footer />
         
