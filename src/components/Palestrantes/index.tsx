@@ -36,7 +36,7 @@ const Palestrantes = () => {
                     textShadow: '3px 3px 5px rgba(0,0,0,0.3)',
                 }}
             >
-                Atrações <span style={{ color: '#FF8C00' }}>Palestrantes</span>
+                Atrações /<span style={{ color: '#FF8C00' }}> Palestrantes</span>
             </Typography>
 
             <Grid container spacing={4} justifyContent="center">

@@ -16,6 +16,8 @@ const eventImages = [
     { src: '/assets/img_1556.jpg', orientation: 'landscape' },
     { src: '/assets/img778.JPEG', orientation: 'portrait' }, 
     { src: '/assets/IMG_3622.JPEG', orientation: 'landscape' },
+    { src: '/assets/well1.jpeg', orientation: 'landscape' },
+    { src: '/assets/well2.jpeg', orientation: 'portrait' }
 ];
 
 const BitcoinBrasilia = () => {

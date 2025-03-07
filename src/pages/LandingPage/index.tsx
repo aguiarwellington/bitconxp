@@ -72,42 +72,26 @@ const LandingPage = () => {
     sx={{
         position: 'relative',
         width: '100%',
-        height: 'auto',
-        minHeight: { xs: '100vh', md: '105vh' }, // Mantém responsivo no mobile e desktop
-        backgroundImage: 'url(/assets/main.png)',
-        backgroundSize: 'cover', // Mantém o preenchimento correto
-        backgroundPosition: 'center', // Centraliza a imagem
-        backgroundRepeat: 'no-repeat',
+        height: '100vh', // Garante que ocupe toda a altura da tela
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'hidden', // Evita barras brancas/pretas embaixo
+        alignItems: 'center',
+        overflow: 'hidden', // Evita qualquer espaço em branco
     }}
 >
-    {/* Adiciona um filtro de gradiente para melhor contraste */}
-    <Box
-        sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5))',
-            zIndex: 1,
+    <img
+        src="/assets/logo1.png"
+        alt="Evento Bitcoin XP"
+        style={{
+            width: '100%', // Garante que a largura seja total
+            height: '100%', // Garante que ocupe toda a tela
+            objectFit: 'cover', // Mantém a proporção e cobre toda a tela
         }}
     />
-
-    {/* Conteúdo centralizado */}
-    <Box
-        sx={{
-            position: 'relative',
-            zIndex: 2,
-            textAlign: 'center',
-            color: '#fff',
-            padding: '20px',
-        }}
-    >
-        
-    </Box>
 </Box>
+
+
+
 
             <Sobre />
             <Palestrantes />
