@@ -114,7 +114,7 @@ const LandingPage = () => {
             <Box
     id="beneficios"
     sx={{
-        padding: { xs: '60px 5%', md: '100px 5%' }, // Ajusta o espaçamento no mobile
+        padding: { xs: '60px 5%', md: '100px 5%' },
         background: 'linear-gradient(to right, #e69c47, #002f87)',
         textAlign: 'center',
     }}
@@ -124,9 +124,9 @@ const LandingPage = () => {
         sx={{
             color: '#fff',
             fontWeight: 'bold',
-            mb: 6,
+            mb: 4, // Mantém o mesmo espaçamento do título principal para ambos os blocos
             textTransform: 'uppercase',
-            fontSize: { xs: '28px', sm: '32px', md: '48px' }, // Fonte menor para telas pequenas
+            fontSize: { xs: '28px', sm: '32px', md: '48px' },
             textShadow: '3px 3px 5px rgba(0,0,0,0.3)',
         }}
     >
@@ -139,16 +139,16 @@ const LandingPage = () => {
             <Box
                 sx={{
                     background: 'linear-gradient(135deg, #FF8C00, #004aad)',
-                    padding: { xs: '30px', md: '40px' }, // Ajusta padding para telas pequenas
+                    padding: { xs: '40px', md: '50px' },
                     borderRadius: '16px',
                     boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
                     transition: '0.3s',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between',
+                    justifyContent: 'flex-start', // Mantém alinhamento uniforme
                     width: '100%',
-                    maxWidth: '500px', // Mantém a proporção nos monitores grandes
-                    minHeight: { xs: 'auto', md: '100%' }, // Garante alinhamento de altura
+                    maxWidth: '600px',
+                    minHeight: { xs: 'auto', md: '450px' },
                     '&:hover': {
                         transform: 'scale(1.03)',
                         boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
@@ -159,15 +159,16 @@ const LandingPage = () => {
                     variant="h4"
                     sx={{
                         color: '#fff',
-                        mb: 3,
-                        fontSize: { xs: '22px', md: '26px' }, // Ajusta a fonte para telas pequenas
+                        mb: 3, // Mesmo espaçamento do título para o texto
+                        fontSize: { xs: '22px', md: '26px' },
+                        textAlign: 'center',
                     }}
                 >
                     🎟 Para os Participantes
                 </Typography>
-                <List sx={{ padding: 0 }}>
+                <List sx={{ padding: 0, marginTop: 0 }}>
                     {benefitsParticipants.map((benefit, index) => (
-                        <ListItem key={index} disableGutters sx={{ padding: '8px 0' }}>
+                        <ListItem key={index} disableGutters sx={{ padding: '6px 0' }}>
                             <ListItemText primary={benefit} sx={{ color: '#fff', fontSize: '16px' }} />
                         </ListItem>
                     ))}
@@ -180,16 +181,16 @@ const LandingPage = () => {
             <Box
                 sx={{
                     background: 'linear-gradient(135deg, #004aad, #FF8C00)',
-                    padding: { xs: '30px', md: '40px' },
+                    padding: { xs: '40px', md: '50px' },
                     borderRadius: '16px',
                     boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
                     transition: '0.3s',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between',
+                    justifyContent: 'flex-start',
                     width: '100%',
-                    maxWidth: '500px',
-                    minHeight: { xs: 'auto', md: '100%' },
+                    maxWidth: '600px',
+                    minHeight: { xs: 'auto', md: '450px' },
                     '&:hover': {
                         transform: 'scale(1.03)',
                         boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
@@ -200,15 +201,16 @@ const LandingPage = () => {
                     variant="h4"
                     sx={{
                         color: '#fff',
-                        mb: 3,
+                        mb: 3, // Mesmo espaçamento do título para o texto
                         fontSize: { xs: '22px', md: '26px' },
+                        textAlign: 'center',
                     }}
                 >
                     💼 Para os Patrocinadores
                 </Typography>
-                <List sx={{ padding: 0 }}>
+                <List sx={{ padding: 0, marginTop: 0 }}>
                     {benefitsSponsors.map((benefit, index) => (
-                        <ListItem key={index} disableGutters sx={{ padding: '8px 0' }}>
+                        <ListItem key={index} disableGutters sx={{ padding: '6px 0' }}>
                             <ListItemText primary={benefit} sx={{ color: '#fff', fontSize: '16px' }} />
                         </ListItem>
                     ))}
@@ -217,6 +219,9 @@ const LandingPage = () => {
         </Grid>
     </Grid>
 </Box>
+
+
+
 
             <Patrocinio />
             <Ingressos />
