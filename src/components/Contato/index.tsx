@@ -21,7 +21,7 @@ const contatos = [
         instagramLink: "https://instagram.com/neveslmjr.wellington",
         twitter: null, // Sem Twitter
         twitterLink: null,
-        foto: "/assets/wellingtonNeves.JPG"
+        foto: "/assets/well01.jpg"
     }
 ];
 
