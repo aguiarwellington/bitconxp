@@ -4,7 +4,7 @@ import { FaInstagram } from 'react-icons/fa';
 
 // Lista de palestrantes
 const speakers = [
-    { name: 'Nyk Casana', role: 'Organizador', img: '/assets/Nyk.jpg', instagram: 'https://instagram.com/nykcasana' },
+    { name: 'Nyk Casana', role: 'Organizador', img: '/assets/nyk01.jpg', instagram: 'https://instagram.com/nykcasana' },
     { name: 'Wellington Neves', role: 'Organizador', img: '/assets/well01.jpg', instagram: 'https://instagram.com/neveslmjr.wellington' },
     { name: 'Camarada Sobrinho', role: 'Especialista Bitcoin e P2P', img: '/assets/Camarada Sobrinho.jpg', instagram: 'https://instagram.com/sobrinho.btc' },
     { name: 'Bruno Costa', role: 'DeFi e Pool de liquidez', img: '/assets/Bruno.jpg', instagram: 'https://instagram.com/b.money_br' },
