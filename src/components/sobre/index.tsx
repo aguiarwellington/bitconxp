@@ -29,8 +29,8 @@ const Sobre = () => {
                         textShadow: '3px 3px 5px rgba(0,0,0,0.3)',
                     }}
                 >
-                    <span>O Futuro do Bitcoin e</span>
-                      Web3 Começa Aqui!
+                    <span>O Futuro do Bitcoin e </span>
+                       Web3 Começa Aqui!
                 </Typography>
 
                 <Typography
