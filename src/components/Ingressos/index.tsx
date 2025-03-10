@@ -102,7 +102,7 @@ const Ingressos = () => {
                         <TextField label="Nome" name="nome" value={formInputs.nome} onChange={handleChange} required fullWidth />
                         <TextField label="E-mail" name="email" type="email" value={formInputs.email} onChange={handleChange} required fullWidth />
                         <TextField label="Telefone" name="telefone" value={formInputs.telefone} onChange={handleChange} required fullWidth />
-                        <TextField label="Coloque seu nome e número de telefone na mensagem" name="mensagem" value={formInputs.mensagem} onChange={handleChange} fullWidth multiline rows={4} />
+                        <TextField label="Coloque seu nome e número na mensagem" name="mensagem" value={formInputs.mensagem} onChange={handleChange} fullWidth multiline rows={4} />
 
                         <Button type="submit" variant="contained" sx={{ backgroundColor: '#E28D1C', color: '#fff', borderRadius: '8px', padding: '10px 20px', fontSize: '18px', textTransform: 'none', mt: 2 }}>
                             <SendIcon sx={{ mr: 1 }} />
