@@ -45,7 +45,7 @@ const benefitsSponsors = [
 
 const LandingPage = () => {
     const isMobile = useMediaQuery('(max-width: 768px)'); 
-    const logoSrc = isMobile ? '/assets/logoMenor.png' : '/assets/logo3.png';
+    const logoSrc = isMobile ? '/assets/img1.png' : '/assets/logo3.png';
 
     return (
         <Box sx={{ backgroundColor: '#4a3f24', color: '#fff', overflowX: 'hidden', minHeight: '100vh' }}>
