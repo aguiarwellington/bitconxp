@@ -62,7 +62,7 @@ const Navbar = () => {
                     <img 
                         src="/assets/logo.png" 
                         alt="Logo" 
-                        style={{ width: '200px', height: 'auto' }} // Aumentei o tamanho do logo
+                        style={{ width: '250px', height: 'auto' }} // Aumentei o tamanho do logo
                     />
                 </Box>
 
