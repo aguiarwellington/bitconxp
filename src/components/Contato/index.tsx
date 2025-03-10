@@ -3,6 +3,7 @@ import { Box, Typography, Grid, Avatar, IconButton } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneIcon from '@mui/icons-material/Phone';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import EmailIcon from '@mui/icons-material/Email';
 
 const contatos = [
     {
@@ -22,6 +23,11 @@ const contatos = [
         twitter: null, 
         twitterLink: null,
         foto: "/assets/well01.jpg"
+    },
+    {
+        nome: "E-mails",
+        emails: ["marketing@bitconxp.com","parceria@bitconxp.com","suporte@bitconxp.com "],
+        foto: "/assets/email.webp" // Ícone do Gmail
     }
 ];
 
@@ -31,7 +37,7 @@ const Contato = () => {
             
             {/* Título */}
             <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#D17A00', mb: 2 }}>
-                Ficou interessado?
+            fale conosco
             </Typography>
             <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 4 }}>
                 Entre em contato com os organizadores!
@@ -53,7 +59,7 @@ const Contato = () => {
                                 boxShadow: '8px 8px 20px rgba(0,0,0,0.3)',
                                 transition: 'transform 0.3s ease-in-out',
                                 '&:hover': { transform: 'scale(1.03)' },
-                                minHeight: '350px' // Garantindo que ambas tenham o mesmo tamanho
+                                minHeight: '350px'
                             }}
                         >
                             <Avatar src={contato.foto} alt={contato.nome} sx={{ width: 120, height: 120, mb: 2, border: '3px solid #D17A00' }} />
@@ -61,54 +67,102 @@ const Contato = () => {
                             <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 3 }}>
                                 {contato.nome}
                             </Typography>
-                            
-                            {/* Telefones - Lado a lado */}
-                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', mb: 2 }}>
-                                {contato.telefones.map((telefone, i) => (
-                                    <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                        <PhoneIcon sx={{ color: '#D17A00' }} />
-                                        <Typography variant="h6">{telefone}</Typography>
-                                    </Box>
-                                ))}
-                            </Box>
 
-                            {/* Redes Sociais - Embaixo dos números */}
-                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
-                                {/* Instagram */}
-                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                    <IconButton href={contato.instagramLink} target="_blank" sx={{ color: '#D17A00' }}>
-                                        <InstagramIcon fontSize="large" />
-                                    </IconButton>
-                                    <Typography 
-                                        variant="h6"
-                                        component="a"
-                                        href={contato.instagramLink}
-                                        target="_blank"
-                                        sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
-                                    >
-                                        {contato.instagram}
-                                    </Typography>
-                                </Box>
-
-                                {/* Twitter (se existir) */}
-                                {contato.twitter && (
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                        <IconButton href={contato.twitterLink} target="_blank" sx={{ color: '#D17A00' }}>
-                                            <TwitterIcon fontSize="large" />
-                                        </IconButton>
-                                        <Typography 
-                                            variant="h6"
-                                            component="a"
-                                            href={contato.twitterLink}
-                                            target="_blank"
-                                            sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
+                            {/* Se for a terceira caixa (E-mails), exibe os e-mails */}
+                            {contato.emails ? (
+                                <Box 
+                                    sx={{ 
+                                        display: 'flex', 
+                                        flexDirection: 'column', 
+                                        alignItems: 'center', 
+                                        justifyContent: 'center', 
+                                        mb: 2, 
+                                        gap: '6px' // Ajuste no espaçamento para uniformidade
+                                    }}
+                                >
+                                    {contato.emails.map((email, i) => (
+                                        <Box 
+                                            key={i} 
+                                            sx={{ 
+                                                display: 'flex', 
+                                                alignItems: 'center', 
+                                                justifyContent: 'center', 
+                                                gap: '8px', 
+                                                width: 'fit-content',
+                                                minWidth: '250px', // Mantém uma largura uniforme
+                                                textAlign: 'center',
+                                            }}
                                         >
-                                            {contato.twitter}
-                                        </Typography>
+                                            <EmailIcon sx={{ color: '#D17A00', fontSize: '20px' }} />
+                                            <Typography 
+                                                variant="h6" 
+                                                component="a" 
+                                                href={`mailto:${email}`} 
+                                                sx={{ 
+                                                    textDecoration: 'none', 
+                                                    color: '#fff', 
+                                                    fontSize: '16px',
+                                                    '&:hover': { color: '#ffa500' },
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    minWidth: '200px', // Garante alinhamento consistente
+                                                }}
+                                            >
+                                                {email}
+                                            </Typography>
+                                        </Box>
+                                    ))}
+                                </Box>
+                                ) : (
+                                                            <>
+                                    {/* Telefones - Apenas para as duas primeiras caixas */}
+                                    <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', mb: 2 }}>
+                                        {contato.telefones.map((telefone, i) => (
+                                            <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                <PhoneIcon sx={{ color: '#D17A00' }} />
+                                                <Typography variant="h6">{telefone}</Typography>
+                                            </Box>
+                                        ))}
                                     </Box>
-                                )}
-                            </Box>
 
+                                    {/* Redes Sociais - Apenas se existir Instagram */}
+                                    <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
+                                        {/* Instagram */}
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                            <IconButton href={contato.instagramLink} target="_blank" sx={{ color: '#D17A00' }}>
+                                                <InstagramIcon fontSize="large" />
+                                            </IconButton>
+                                            <Typography 
+                                                variant="h6"
+                                                component="a"
+                                                href={contato.instagramLink}
+                                                target="_blank"
+                                                sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
+                                            >
+                                                {contato.instagram}
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Twitter (se existir) */}
+                                        {contato.twitter && (
+                                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                <IconButton href={contato.twitterLink} target="_blank" sx={{ color: '#D17A00' }}>
+                                                    <TwitterIcon fontSize="large" />
+                                                </IconButton>
+                                                <Typography 
+                                                    variant="h6"
+                                                    component="a"
+                                                    href={contato.twitterLink}
+                                                    target="_blank"
+                                                    sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
+                                                >
+                                                    {contato.twitter}
+                                                </Typography>
+                                            </Box>
+                                        )}
+                                    </Box>
+                                </>
+                            )}
                         </Box>
                     </Grid>
                 ))}
