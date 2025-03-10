@@ -1,7 +1,9 @@
-import React from 'react';
-import { Box, Typography, Button, Paper, Stack, Grid } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Button, Paper, Stack, Grid, TextField } from '@mui/material';
 import { motion } from 'framer-motion';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import SendIcon from '@mui/icons-material/Send';
+import axios from 'axios';
 
 const ingressos = [
     {
@@ -35,30 +37,67 @@ const ingressos = [
 ];
 
 const Ingressos = () => {
+    const [formInputs, setFormInputs] = useState({
+        nome: "",
+        email: "",
+        telefone: "",
+        mensagem: "",
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormInputs({ ...formInputs, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    
+        
+        const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeKaqLIZO2NnoGAjVmn6Wj7jCOl6r_vdrI86KuTiwpiSAVvRA/formResponse";
+    
+        
+        const formPayload = new FormData();
+        formPayload.append("entry.1209685076", formInputs.nome);     
+        formPayload.append("entry.796714753", formInputs.email);     
+        formPayload.append("entry.2008765561", formInputs.telefone); 
+        formPayload.append("entry.2023437147", formInputs.mensagem); 
+    
+        try {
+            await fetch(googleFormUrl, {
+                method: "POST",
+                body: formPayload,
+                mode: "no-cors", 
+            });
+    
+            alert("Mensagem enviada com sucesso!");
+            setFormInputs({ nome: "", email: "", telefone: "", mensagem: "" });
+    
+        } catch (error) {
+            alert("Erro ao enviar. Tente novamente.");
+        }
+    };
+    
+    
     return (
         <Box id="ingressos" sx={{ background: 'linear-gradient(to right, #e69c47, #002f87)', color: '#fff', padding: '80px 20px', textAlign: 'center' }}>
-            
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
             >
-                {/* Caixa Principal */}
                 <Paper 
                     elevation={10}
                     sx={{
                         maxWidth: 850,
                         margin: '0 auto',
-                        background: 'linear-gradient(to right, #e69c47, #002f87)', // Degradê aplicado aqui!
+                        background: 'linear-gradient(to right, #e69c47, #002f87)',
                         padding: '50px',
                         borderRadius: '16px',
                         textAlign: 'center',
                         border: '2px solid #E28D1C'
                     }}
                 >
-                    {/* Destaque para Pré-Venda */}
                     <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#E28D1C', mb: 2 }}>
-                            <span style={{ color: '#E28D1C' }}></span> <span style={{ color: '#fff' }}>PRÉ-VENDA</span> LIBERADA!
+                        <span style={{ color: '#fff' }}>PRÉ-VENDA</span> LIBERADA!
                     </Typography>
                     <Typography variant="body1" sx={{ color: '#fff', mb: 4 }}>
                         **Garanta seu ingresso agora antes que os preços aumentem!**
@@ -121,14 +160,57 @@ const Ingressos = () => {
                         </motion.div>
                     </Stack>
 
-                    {/* Aviso de urgência */}
-                    <Typography variant="body2" sx={{ color: '#ff4747', fontWeight: 'bold', mt: 3 }}>
-                        ⏳ *Vagas Limitadas! Garanta já o seu!*
-                    </Typography>
-                </Paper>
-            </motion.div>
-        </Box>
-    );
-};
+                    {/* OU Separador */}
+                    <Typography variant="h5" sx={{ mt: 4, fontWeight: 'bold' }}>OU</Typography>
+
+                    {/* Formulário de Contato */}
+                    <Box
+                        component="form"
+                        onSubmit={handleSubmit}
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: 2,
+                            mt: 3
+                        }}
+                    >
+                        <TextField label="Nome" name="nome" value={formInputs.nome} onChange={handleChange} required fullWidth />
+                        <TextField label="E-mail" name="email" type="email" value={formInputs.email} onChange={handleChange} required fullWidth />
+                        <TextField label="Telefone" name="telefone" value={formInputs.telefone} onChange={handleChange} required fullWidth />
+                        <TextField 
+                            label="Mensagem" 
+                            name="mensagem" 
+                            value={formInputs.mensagem} 
+                            onChange={handleChange} 
+                            required 
+                            fullWidth 
+                            multiline 
+                            rows={4} 
+                        />
+
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            sx={{
+                                backgroundColor: '#E28D1C',
+                                color: '#fff',
+                                borderRadius: '8px',
+                                padding: '10px 20px',
+                                fontSize: '18px',
+                                textTransform: 'none',
+                                mt: 2
+                            }}
+                        >
+                            <SendIcon sx={{ mr: 1 }} />
+                            Entraremos em contato
+                        </Button>
+
+                                            </Box>
+                                        </Paper>
+                                    </motion.div>
+                                </Box>
+                            );
+                        };
 
 export default Ingressos;

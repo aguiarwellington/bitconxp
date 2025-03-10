@@ -7,7 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 const contatos = [
     {
         nome: "BTC Conecta",
-        telefones: ["61 99670-1472", "61 9979-7179"], // Dois telefones
+        telefones: ["61 99670-1472", "61 9979-7179"], 
         instagram: "@btcconecta",
         instagramLink: "https://instagram.com/btcconecta",
         twitter: "@btcconecta",
@@ -16,10 +16,10 @@ const contatos = [
     },
     {
         nome: "Wellington Neves",
-        telefones: ["61 99918-0458"], // Apenas um telefone
+        telefones: ["61 99918-0458"], 
         instagram: "@neveslmjr.wellington",
         instagramLink: "https://instagram.com/neveslmjr.wellington",
-        twitter: null, // Sem Twitter
+        twitter: null, 
         twitterLink: null,
         foto: "/assets/well01.jpg"
     }
