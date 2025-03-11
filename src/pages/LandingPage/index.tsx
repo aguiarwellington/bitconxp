@@ -3,7 +3,6 @@ import {
     Box,
     useMediaQuery,
     Typography,
-    Button,
     List,
     ListItem,
     ListItemText,
@@ -13,16 +12,21 @@ import {
 import Navbar from '../../components/Navegacao';
 import Footer from '../../components/Footer';
 import Ingressos from '../../components/Ingressos';
-import Suporte from '../../components/Suporte';
 import BitcoinBrasilia from '../../components/carrossel';
 import Palestrantes from '../../components/Palestrantes';
 import Patrocinio from '../../components/Patrocinio';
 import Contato from '../../components/Contato';
 import Sobre from '../../components/sobre';
 import Local from '../../components/Local';
-import Cronograma from '../../components/cronograma';
 
-
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineDot from "@mui/lab/TimelineDot";
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
+import EventIcon from "@mui/icons-material/Event";
 
 const benefitsParticipants = [
     '🎓 Aprendizado de Alto Nível – Workshops e palestras com especialistas em Bitcoin e Web3.',
@@ -45,6 +49,31 @@ const benefitsSponsors = [
     '📢 Promoção nas Redes Sociais – Menções, marcações e repostagens no Instagram do evento e de influenciadores.',
     '🅿️ Benefícios VIP – Estacionamento, acessos e assentos privilegiados.',
     '✨ E outras oportunidades exclusivas!'
+];
+
+const events = [
+  {
+    date: "03/05 - Bitcoin",
+    schedule: [
+      { time: "09h00 às 12h30", title: "Palestra" },
+      { time: "12h30 às 14h00", title: "Almoço" },
+      { time: "14h00 às 18h00", title: "Curso - Autocustódia" },
+      { time: "18h00 às 20h30", title: "Intervalo" },
+      { time: "20h30 às 23h00", title: "Jantar" },
+    ],
+  },
+  {
+    date: "04/05 - WEB3",
+    schedule: [
+      { time: "07h00 às 09h30", title: "Café da manhã" },
+      { time: "10h00 às 12h30", title: "Palestra" },
+      { time: "12h30 às 14h00", title: "Almoço" },
+      { time: "14h00 às 15h30", title: "Mesa redonda" },
+      { time: "15h30 às 16h00", title: "Perguntas" },
+      { time: "16h00 às 21h30", title: "Autógrafos e Fotos" },
+      { time: "22h00", title: "Encerramento" },
+    ],
+  },
 ];
 
 const LandingPage = () => {
@@ -83,96 +112,57 @@ const LandingPage = () => {
             <Palestrantes />
 
             {/* Seção de Benefícios */}
+            <Patrocinio />
+
+            {/* Cronograma - Agora inserido diretamente na LandingPage */}
             <Box
-                id="beneficios"
                 sx={{
-                    padding: { xs: '60px 5%', md: '100px 5%' },
-                    background: 'linear-gradient(to right, #e69c47, #002f87)',
-                    textAlign: 'center',
+                    background: "linear-gradient(to right, #e69c47, #002f87)",
+                    color: "#fff",
+                    padding: "80px 5%",
+                    textAlign: "center",
                 }}
             >
                 <Typography
-                    variant="h2"
-                    sx={{
-                        color: '#fff',
-                        fontWeight: 'bold',
-                        mb: 4,
-                        textTransform: 'uppercase',
-                        fontSize: { xs: '28px', sm: '32px', md: '48px' },
-                        textShadow: '3px 3px 5px rgba(0,0,0,0.3)',
-                    }}
+                    variant="h4"
+                    sx={{ fontWeight: "bold", mb: 4, color: "#FF8C00" }}
                 >
-                    Benefícios <span style={{ color: '#FF8C00' }}>do Evento</span>
+                    <EventIcon sx={{ fontSize: "34px", mr: 1 }} /> Data do Evento
                 </Typography>
-
-                <Grid container spacing={4} justifyContent="center">
-                    {/* Bloco de Participantes */}
-                    <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Box
-                            sx={{
-                                background: 'linear-gradient(135deg, #FF8C00, #004aad)',
-                                padding: { xs: '40px', md: '50px' },
-                                borderRadius: '16px',
-                                boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
-                                transition: '0.3s',
-                                width: '100%',
-                                maxWidth: '600px',
-                                minHeight: { xs: 'auto', md: '450px' },
-                                '&:hover': {
-                                    transform: 'scale(1.03)',
-                                    boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
-                                },
-                            }}
+                {events.map((event, index) => (
+                    <Box key={index} sx={{ mb: 6 }}>
+                        <Typography
+                            variant="h5"
+                            sx={{ fontWeight: "bold", color: "#FF8C00", mb: 2 }}
                         >
-                            <Typography variant="h4" sx={{ color: '#fff', mb: 3, textAlign: 'center' }}>
-                                🎟 Para os Participantes
-                            </Typography>
-                            <List sx={{ padding: 0, marginTop: 0 }}>
-                                {benefitsParticipants.map((benefit, index) => (
-                                    <ListItem key={index} disableGutters sx={{ padding: '6px 0' }}>
-                                        <ListItemText primary={benefit} sx={{ color: '#fff' }} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Box>
-                    </Grid>
-
-                    {/* Bloco de Patrocinadores */}
-                    <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Box
-                            sx={{
-                                background: 'linear-gradient(135deg, #004aad, #FF8C00)',
-                                padding: { xs: '40px', md: '50px' },
-                                borderRadius: '16px',
-                                boxShadow: '6px 6px 15px rgba(0,0,0,0.2)',
-                                transition: '0.3s',
-                                width: '100%',
-                                maxWidth: '600px',
-                                minHeight: { xs: 'auto', md: '450px' },
-                                '&:hover': {
-                                    transform: 'scale(1.03)',
-                                    boxShadow: '10px 10px 20px rgba(0,0,0,0.3)',
-                                },
-                            }}
-                        >
-                            <Typography variant="h4" sx={{ color: '#fff', mb: 3, textAlign: 'center' }}>
-                                💼 Para os Patrocinadores
-                            </Typography>
-                            <List sx={{ padding: 0, marginTop: 0 }}>
-                                {benefitsSponsors.map((benefit, index) => (
-                                    <ListItem key={index} disableGutters sx={{ padding: '6px 0' }}>
-                                        <ListItemText primary={benefit} sx={{ color: '#fff' }} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Box>
-                    </Grid>
-                </Grid>
+                            {event.date}
+                        </Typography>
+                        <Timeline position="alternate">
+                            {event.schedule.map((item, idx) => (
+                                <TimelineItem key={idx}>
+                                    <TimelineOppositeContent
+                                        sx={{ fontWeight: "bold", color: "#fff" }}
+                                    >
+                                        {item.time}
+                                    </TimelineOppositeContent>
+                                    <TimelineSeparator>
+                                        <TimelineDot sx={{ backgroundColor: "#FF8C00" }} />
+                                        {idx !== event.schedule.length - 1 && (
+                                            <TimelineConnector sx={{ backgroundColor: "#FF8C00" }} />
+                                        )}
+                                    </TimelineSeparator>
+                                    <TimelineContent
+                                        sx={{ fontWeight: "bold", color: "#fff" }}
+                                    >
+                                        {item.title}
+                                    </TimelineContent>
+                                </TimelineItem>
+                            ))}
+                        </Timeline>
+                    </Box>
+                ))}
             </Box>
 
-            <Patrocinio />
-
-            <Cronograma />   
             <Local />               
             <Ingressos />
             <BitcoinBrasilia />
