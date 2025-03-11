@@ -30,7 +30,6 @@ const Navbar = () => {
         }, 200);
     };
 
-    // Detectar seção visível ao rolar a página
     useEffect(() => {
         const handleScroll = () => {
             let currentSection = 'home';
