@@ -25,6 +25,7 @@ import Cronograma from "../../components/cronograma";
 
 
 
+
 const benefitsParticipants = [
     '🎓 Aprendizado de Alto Nível – Workshops e palestras com especialistas em Bitcoin e Web3.',
     '🤝 Conexões Estratégicas – Expanda sua rede com entusiastas e profissionais do mercado.',
