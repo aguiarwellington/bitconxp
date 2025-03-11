@@ -20,10 +20,6 @@ import Patrocinio from '../../components/Patrocinio';
 import Contato from '../../components/Contato';
 import Sobre from '../../components/sobre';
 import Local from '../../components/Local';
-import Cronograma from "../../components/cronograma"; 
-
-
-
 
 
 
@@ -175,7 +171,7 @@ const LandingPage = () => {
 
             <Patrocinio />
 
-            <Cronograma />     
+               
             <Local />               
             <Ingressos />
             <BitcoinBrasilia />
