@@ -19,6 +19,8 @@ import Palestrantes from '../../components/Palestrantes';
 import Patrocinio from '../../components/Patrocinio';
 import Contato from '../../components/Contato';
 import Sobre from '../../components/sobre';
+import Cronograma from '../../components/cronograma';
+import Local from '../../components/Local';
 
 const benefitsParticipants = [
     '🎓 Aprendizado de Alto Nível – Workshops e palestras com especialistas em Bitcoin e Web3.',
@@ -167,6 +169,10 @@ const LandingPage = () => {
             </Box>
 
             <Patrocinio />
+
+            <Cronograma />     
+            <Local />               
+
             <Ingressos />
             <BitcoinBrasilia />
             <Contato />
