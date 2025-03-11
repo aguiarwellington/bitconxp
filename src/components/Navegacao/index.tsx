@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const menuItems = [
     { label: 'Home', path: 'home' },
     { label: 'Sobre', path: 'sobre' },
+    { label: 'Workshops', path: 'workshops' },
     { label: 'Palestrantes', path: 'palestrantes' },
     { label: 'Local e Data', path: 'local' },
     { label: 'Ingressos', path: 'ingressos' },
@@ -30,6 +31,7 @@ const Navbar = () => {
         }, 200);
     };
 
+    // Detectar seção visível ao rolar a página
     useEffect(() => {
         const handleScroll = () => {
             let currentSection = 'home';
