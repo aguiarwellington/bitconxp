@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-    Box,
-    useMediaQuery,
-    Typography,
-    List,
-    ListItem,
-    ListItemText,
-    Grid
-} from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import Navbar from '../../components/Navegacao';
 import Footer from '../../components/Footer';
@@ -28,29 +20,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import EventIcon from "@mui/icons-material/Event";
 
-const benefitsParticipants = [
-    '🎓 Aprendizado de Alto Nível – Workshops e palestras com especialistas em Bitcoin e Web3.',
-    '🤝 Conexões Estratégicas – Expanda sua rede com entusiastas e profissionais do mercado.',
-    '🌍 Networking de Qualidade – Troque experiências no ambiente ideal para conexões valiosas.',
-    '🏛️ Experiência Confortável e Organizada – Infraestrutura pensada para seu bem-estar.',
-    '✍️ Sessão de Autógrafos e Fotografias – Encontro com autores e especialistas do setor.',
-    '📊 Visão Atualizada do Mercado – Discussões sobre o cenário geopolítico e impactos no setor.',
-    '💬 Dúvidas Esclarecidas – Interação direta com especialistas para respostas em tempo real.',
-    '🔐 Segurança Garantida – Ambiente monitorado para sua tranquilidade.',
-    '✨ E muito mais!'
-];
-
-const benefitsSponsors = [
-    '🚀 Alta Visibilidade para Sua Marca – Sua empresa em destaque no universo cripto.',
-    '🎞️ Vídeo Institucional no Telão – Exibição de até 1 minuto para impactar o público.',
-    '🎙️ Menção Especial no Evento – O mestre de cerimônias apresentando sua marca.',
-    '🏷️ Logomarca em Todos os Materiais do Evento – Cartazes, panfletos e muito mais.',
-    '🎪 Espaço Exclusivo para Stand – Interação direta com o público e geração de leads.',
-    '📢 Promoção nas Redes Sociais – Menções, marcações e repostagens no Instagram do evento e de influenciadores.',
-    '🅿️ Benefícios VIP – Estacionamento, acessos e assentos privilegiados.',
-    '✨ E outras oportunidades exclusivas!'
-];
-
+// Definição dos eventos para o cronograma
 const events = [
   {
     date: "03/05 - Bitcoin",
@@ -77,44 +47,44 @@ const events = [
 ];
 
 const LandingPage = () => {
-    const isMobile = useMediaQuery('(max-width: 768px)'); 
-    const logoSrc = isMobile ? '/assets/img1.png' : '/assets/logo3.png';
-
     return (
         <Box sx={{ backgroundColor: '#4a3f24', color: '#fff', overflowX: 'hidden', minHeight: '100vh' }}>
             <Navbar />
 
-            {/* Seção Principal com a Logo */}
+            {/* Seção Principal com a Imagem 100% Responsiva */}
             <Box
                 id="home"
                 sx={{
                     position: 'relative',
-                    width: '100%',
+                    width: '100vw',
                     height: '100vh',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                     overflow: 'hidden',
                 }}
             >
-                <img
-                    src={logoSrc}
-                    alt="Evento Bitcoin XP"
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                    }}
-                />
+                <picture>
+                    <source media="(max-width: 768px)" srcSet="/assets/img1.png" />
+                    <source media="(min-width: 769px)" srcSet="/assets/logo3.png" />
+                    <img
+                        src="/assets/logo3.png"
+                        alt="Evento Bitcoin XP"
+                        style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '100vw',
+                            height: '100vh',
+                            objectFit: 'cover', // Garante que a imagem cubra toda a tela sem espaços pretos
+                        }}
+                    />
+                </picture>
             </Box>
 
             <Sobre />
             <Palestrantes />
-
-            {/* Seção de Benefícios */}
             <Patrocinio />
 
-            {/* Cronograma - Agora inserido diretamente na LandingPage */}
+            {/* Cronograma */}
             <Box
                 sx={{
                     background: "linear-gradient(to right, #e69c47, #002f87)",

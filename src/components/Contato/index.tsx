@@ -126,41 +126,43 @@ const Contato = () => {
                                     </Box>
 
                                     {/* Redes Sociais - Apenas se existir Instagram */}
-                                    <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
-                                        {/* Instagram */}
-                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                            <IconButton href={contato.instagramLink} target="_blank" sx={{ color: '#D17A00' }}>
-                                                <InstagramIcon fontSize="large" />
-                                            </IconButton>
-                                            <Typography 
-                                                variant="h6"
-                                                component="a"
-                                                href={contato.instagramLink}
-                                                target="_blank"
-                                                sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
-                                            >
-                                                {contato.instagram}
-                                            </Typography>
-                                        </Box>
+                                   {/* Redes Sociais - Apenas se existir Instagram */}
+<Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
+    {/* Instagram */}
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+        <IconButton href={contato.instagramLink} target="_blank" sx={{ color: '#D17A00' }}>
+            <InstagramIcon fontSize="large" />
+        </IconButton>
+        <Typography 
+            variant="h6"
+            component="a"
+            href={contato.instagramLink}
+            target="_blank"
+            sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
+        >
+            {contato.instagram}
+        </Typography>
+    </Box>
 
-                                        {/* Twitter (se existir) */}
-                                        {contato.twitter && (
-                                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                <IconButton href={contato.twitterLink} target="_blank" sx={{ color: '#D17A00' }}>
-                                                    <TwitterIcon fontSize="large" />
-                                                </IconButton>
-                                                <Typography 
-                                                    variant="h6"
-                                                    component="a"
-                                                    href={contato.twitterLink}
-                                                    target="_blank"
-                                                    sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
-                                                >
-                                                    {contato.twitter}
-                                                </Typography>
-                                            </Box>
-                                        )}
-                                    </Box>
+    {/* Twitter (se existir) */}
+    {contato.twitter && (
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <IconButton href={contato.twitterLink} target="_blank" sx={{ color: '#D17A00' }}>
+                <TwitterIcon fontSize="large" />
+            </IconButton>
+            <Typography 
+                variant="h6"
+                component="a"
+                href={contato.twitterLink}
+                target="_blank"
+                sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
+            >
+                {contato.twitter}
+            </Typography>
+        </Box>
+    )}
+</Box>
+
                                 </>
                             )}
                         </Box>
