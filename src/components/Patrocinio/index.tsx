@@ -60,9 +60,15 @@ const PatrocinioInvestimento = () => {
         <Box sx={{ background: 'linear-gradient(to right, #e69c47, #002f87)', color: '#fff', padding: '80px 20px', textAlign: 'center' }}>
             
             {/* Título Principal */}
-            <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 4, color: '#fff' }}>
+            <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 2, color: '#fff' }}>
                 Tipos de Patrocínio<span style={{ color: '#E28D1C' }}> e Investimento</span>
             </Typography>
+
+            {/* Subtítulo */}
+            <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 6, color: '#E0E0E0' }}>
+                Cada categoria inclui todos os benefícios das anteriores
+            </Typography>
+
             {/* Blocos empilhados */}
             <Grid container spacing={4} justifyContent="center">
                 {patrocinioData.map((item, index) => (
@@ -106,7 +112,6 @@ const PatrocinioInvestimento = () => {
                     </Grid>
                 ))}
             </Grid>
-
           
         </Box>
     );

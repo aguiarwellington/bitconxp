@@ -37,7 +37,7 @@ const Footer = () => {
                     <IconButton href="" target="_blank" sx={{ color: '#FFEB3B', transition: '0.3s', '&:hover': { color: '#ffa500' } }}>
                         <YouTubeIcon fontSize="large" />
                     </IconButton>
-                    <IconButton href="https://x.com/BtcConecta" target="_blank" sx={{ color: '#FFEB3B', transition: '0.3s', '&:hover': { color: '#ffa500' } }}>
+                    <IconButton href="https://x.com/bitconxp" target="_blank" sx={{ color: '#FFEB3B', transition: '0.3s', '&:hover': { color: '#ffa500' } }}>
                         <TwitterIcon fontSize="large" />
                     </IconButton>
                     <IconButton href="https://telegram.org" target="_blank" sx={{ color: '#FFEB3B', transition: '0.3s', '&:hover': { color: '#ffa500' } }}>
