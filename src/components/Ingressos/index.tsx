@@ -38,7 +38,7 @@ const Ingressos = () => {
         setFormInputs(prevInputs => ({
             ...prevInputs,
             ingressoSelecionado: ingresso.titulo,
-            mensagem: `Estou interessado em compro o: ${ingresso.titulo}.\n\nNome: ${prevInputs.nome || "Nome não informado"}\nTelefone: ${prevInputs.telefone || "Telefone não informado"}`
+            mensagem: `Estou interessado em comprar o: ${ingresso.titulo}.\n\nNome: ${prevInputs.nome || "Nome não informado"}\nTelefone: ${prevInputs.telefone || "Telefone não informado"}`
         }));
     };
 
