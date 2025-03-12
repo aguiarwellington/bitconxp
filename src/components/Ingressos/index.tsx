@@ -43,7 +43,7 @@ const Ingressos = () => {
     };
 
     const handleWhatsApp = () => {
-        const mensagemWhatsApp = `Olá, gostaria de comprar o ingresso: *${formInputs.ingressoSelecionado}*.\n\nNome: ${formInputs.nome || "Nome não informado"}\nEmail: ${formInputs.email}\nTelefone: ${formInputs.telefone || "Telefone não informado"}\nMensagem: ${formInputs.mensagem}\n\nObrigado!`;
+        const mensagemWhatsApp = `Olá, gostaria de comprar o ingresso: *${formInputs.ingressoSelecionado}*`;
         return `https://wa.me/556199180458?text=${encodeURIComponent(mensagemWhatsApp)}`;
     };
 
