@@ -7,13 +7,13 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const contatos = [
     {
-        nome: "BTC Conecta",
-        telefones: ["61 99670-1472", "61 9979-7179"], 
-        instagram: "@btcconecta",
-        instagramLink: "https://instagram.com/btcconecta",
-        twitter: "@btcconecta",
+        nome: "Nyk Casana",
+        telefones: ["61 99670-1472", ""], 
+        instagram: "@nykcasana",
+        instagramLink: "https://instagram.com/nykcasana",
+        twitter: null,
         twitterLink: "https://twitter.com/btcconecta",
-        foto: "/assets/btcconecta.jpeg"
+        foto: "/assets/nyk01.jpg"
     },
     {
         nome: "Wellington Neves",
@@ -36,7 +36,7 @@ const Contato = () => {
         <Box id="contato" sx={{ background: 'linear-gradient(to right, #e69c47, #002f87)', color: '#fff', padding: '80px 20px', textAlign: 'center' }}>
             
             {/* Título */}
-            <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#D17A00', mb: 2 }}>
+            <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#FFEB3B', mb: 2 }}>
             fale conosco
             </Typography>
             <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 4 }}>
@@ -125,7 +125,7 @@ const Contato = () => {
                                         ))}
                                     </Box>
 
-<Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
+<Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', justifyContent: 'center', marginLeft: '-20px' }}>
     {/* Instagram */}
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <IconButton href={contato.instagramLink} target="_blank" sx={{ color: '#D17A00' }}>
@@ -142,23 +142,7 @@ const Contato = () => {
         </Typography>
     </Box>
 
-    {/* Twitter (se existir) */}
-    {contato.twitter && (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <IconButton href={contato.twitterLink} target="_blank" sx={{ color: '#D17A00' }}>
-                <TwitterIcon fontSize="large" />
-            </IconButton>
-            <Typography 
-                variant="h6"
-                component="a"
-                href={contato.twitterLink}
-                target="_blank"
-                sx={{ textDecoration: 'none', color: '#fff', '&:hover': { color: '#ffa500' } }}
-            >
-                {contato.twitter}
-            </Typography>
-        </Box>
-    )}
+   
 </Box>
 
                                 </>

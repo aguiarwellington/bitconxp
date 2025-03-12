@@ -95,7 +95,7 @@ const LandingPage = () => {
             >
                 <Typography
                     variant="h4"
-                    sx={{ fontWeight: "bold", mb: 4, color: "#FF8C00" }}
+                    sx={{ fontWeight: "bold", mb: 4, color: "#D3D3D3" }}
                 >
                     <EventIcon sx={{ fontSize: "34px", mr: 1 }} /> Data do Evento
                 </Typography>
@@ -103,7 +103,7 @@ const LandingPage = () => {
                     <Box key={index} sx={{ mb: 6 }}>
                         <Typography
                             variant="h5"
-                            sx={{ fontWeight: "bold", color: "#FF8C00", mb: 2 }}
+                            sx={{ fontWeight: "bold", color: "#EEE8AA", mb: 2 }}
                         >
                             {event.date}
                         </Typography>

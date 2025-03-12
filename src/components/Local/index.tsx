@@ -6,19 +6,12 @@ import { FaWaze } from 'react-icons/fa';
 
 const locais = [
     {
-        nome: '📍 R. Padre Ibiapina, 1129 - Centro, Fortaleza - CE, 60010-260',
-        imagem: '/assets/Unifra.jpg',
-        googleMaps: 'https://www.google.com/maps?q=R.+Padre+Ibiapina,+1129+-+Centro,+Fortaleza+-+CE',
-        waze: 'https://waze.com/ul?q=R.+Padre+Ibiapina,+1129+-+Centro,+Fortaleza+-+CE',
+        nome: '📍 Local a definir',
+        imagem: '',
+        googleMaps: '',
+        waze: '',
         cor: 'linear-gradient(135deg, #FF8C00, #004aad)',
-    },
-    {
-        nome: '📍 Centro de Eventos BTC Fortaleza',
-        imagem: '/assets/Unifametro.jpg',
-        googleMaps: 'https://www.google.com/maps?q=Centro+de+Eventos+BTC+Fortaleza',
-        waze: 'https://waze.com/ul?q=Centro+de+Eventos+BTC+Fortaleza',
-        cor: 'linear-gradient(135deg, #004aad, #FF8C00)',
-    },
+    }
 ];
 
 const LocalEvento = () => {
@@ -54,7 +47,7 @@ const LocalEvento = () => {
                                 },
                             }}
                         >
-                            <img src={local.imagem} alt={`Local ${index + 1}`} style={{ width: '100%', borderRadius: '12px' }} />
+                          
                             <Typography variant="h6" color="white" sx={{ mt: 3, fontWeight: 'bold' }}>
                                 {local.nome}
                             </Typography>
