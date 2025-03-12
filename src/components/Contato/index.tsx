@@ -125,8 +125,6 @@ const Contato = () => {
                                         ))}
                                     </Box>
 
-                                    {/* Redes Sociais - Apenas se existir Instagram */}
-                                   {/* Redes Sociais - Apenas se existir Instagram */}
 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
     {/* Instagram */}
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
