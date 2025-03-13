@@ -8,7 +8,7 @@ import EmailIcon from '@mui/icons-material/Email';
 const contatos = [
     {
         nome: "Nyk Casana",
-        telefones: ["61 99670-1472", ""], 
+        telefones: ["61 99670-1472"], 
         instagram: "@nykcasana",
         instagramLink: "https://instagram.com/nykcasana",
         twitter: null,
