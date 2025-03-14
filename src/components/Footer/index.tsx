@@ -50,7 +50,7 @@ const Footer = () => {
                 {/* Política de Privacidade e Termos */}
                 <Grid item xs={12}>
                     <Typography variant="body2">
-                        <a href="#" 
+                        <a  
                             style={{ color: '#FFEB3B', textDecoration: 'none', fontWeight: 'bold', marginRight: '15px', transition: '0.3s' }}
                             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#ffa500')}
                             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#FFEB3B')}
@@ -58,7 +58,7 @@ const Footer = () => {
                             Política de Privacidade
                         </a> 
                         |
-                        <a href="#" 
+                        <a 
                             style={{ color: '#FFEB3B', textDecoration: 'none', fontWeight: 'bold', marginLeft: '15px', transition: '0.3s' }}
                             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#ffa500')}
                             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#FFEB3B')}

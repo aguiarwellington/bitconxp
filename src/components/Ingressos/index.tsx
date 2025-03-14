@@ -7,7 +7,7 @@ const ingressos = [
     { titulo: 'Bitcoin Day', descricao: 'Acesso ao primeiro dia do evento, com palestras e cursos exclusivos sobre Bitcoin.', preco: 'R$ 200,00', cor: 'linear-gradient(135deg, #f5af19, #e69c47)', emoji: '₿' },
     { titulo: 'WEB3 Day', descricao: 'Acesso ao segundo dia do evento, explorando inovação, descentralização e Web3.', preco: 'R$ 350,00', cor: 'linear-gradient(135deg, #e69c47, #f5af19)', emoji: '🌐' },
     { titulo: 'Full Experience', descricao: 'Acesso completo aos dois dias do evento, incluindo todas as palestras e cursos.', preco: 'R$ 500,00', cor: 'linear-gradient(135deg, #002f87, #e69c47)', emoji: '🔥' },
-    { titulo: 'VIP Experience', descricao: 'Acesso total, brindes exclusivos, sorteios e um jantar especial com os palestrantes.', preco: 'R$ 1000,00', cor: 'linear-gradient(135deg, #8B0000, #FF4500)', emoji: '👑' }
+    { titulo: 'VIP Experience', descricao: 'Acesso total, brindes exclusivos, sorteios e um jantar especial com os palestrantes.', preco: 'R$ 1000,00', cor: 'linear-gradient(135deg,rgb(3, 3, 3),rgb(0, 0, 0))', emoji: '👑' }
 ];
 
 const Ingressos = () => {
