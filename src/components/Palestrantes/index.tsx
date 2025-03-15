@@ -9,7 +9,7 @@ const speakers = [
     { name: 'Camarada Sobrinho', role: 'Especialista Bitcoin e P2P', img: '/assets/Camarada Sobrinho.jpg', instagram: 'https://instagram.com/sobrinho.btc' },
     { name: 'Bruno Costa', role: 'DeFi e Pool de liquidez', img: '/assets/Bruno.jpg', instagram: 'https://instagram.com/b.money_br' },
     { name: 'Walter Silva', role: 'Macroeconomia e DeFi', img: '/assets/Walter.jpg', instagram: 'https://instagram.com/criptocomfe' },
-    { name: 'Rodolfo Romão', role: 'Bitcoin e programação', img: '/assets/Rodolfo.jpg', instagram: 'https://instagram.com/rodolforomao' },
+    { name: 'Rodolfo Romão', role: 'Bitcoin e programação', img: '/assets/Rodolfo.jpg', instagram: 'https://instagram.com/dev.brincante' },
     { name: 'Filipe Iório', role: 'CEO Criptoverso', img: '/assets/Filipe.jpg', instagram:'https://instagram.com/filipe.iorio' }, 
     { name: 'Breno Brito', role: 'Bitcoin - TI', img: '/assets/Breno.jpg', instagram: 'https://instagram.com/brenorbrito' },
     { name: 'Jeff Plebs', role: 'Especialista BTC e WEB3', img: '/assets/jeff.jpg', instagram: 'https://instagram.com/jeffplebs' }
