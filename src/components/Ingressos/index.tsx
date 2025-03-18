@@ -32,11 +32,19 @@ const Ingressos = () => {
                     </Grid>
 
                     <Box sx={{ mt: 4, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, alignItems: 'center', justifyContent: 'center' }}>
-                        <Button href="https://wa.me/5561996701472" target="_blank" variant="contained" sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}>
+                        <Button 
+                            href="https://wa.me/5561996701472?text=Estou%20interessado%20em%20comprar%20o%20ingresso" 
+                            target="_blank" 
+                            variant="contained" 
+                            sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}>
                             <WhatsAppIcon sx={{ mr: 1}} /> Compre com Nyk Casana
                         </Button>
                         <Typography variant="h6" sx={{ color: '#fff', fontWeight: 'bold' }}>OU</Typography>
-                        <Button href="https://wa.me/5561999180458" target="_blank" variant="contained" sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}>
+                        <Button 
+                            href="https://wa.me/5561999180458?text=Estou%20interessado%20em%20comprar%20o%20ingresso" 
+                            target="_blank" 
+                            variant="contained" 
+                            sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}>
                             <WhatsAppIcon sx={{ mr: 1 }} /> Compre com Wellington
                         </Button>
                     </Box>
