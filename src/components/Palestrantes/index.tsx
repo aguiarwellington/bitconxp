@@ -12,7 +12,8 @@ const speakers = [
     { name: 'Rodolfo Romão', role: 'Bitcoin e programação', img: '/assets/Rodolfo.jpg', instagram: 'https://instagram.com/dev.brincante' },
     { name: 'Filipe Iório', role: 'CEO Criptoverso', img: '/assets/Filipe.jpg', instagram:'https://instagram.com/filipe.iorio' }, 
     { name: 'Breno Brito', role: 'Bitcoin - TI', img: '/assets/Breno.jpg', instagram: 'https://instagram.com/brenorbrito' },
-    { name: 'Jeff Plebs', role: 'Especialista BTC e WEB3', img: '/assets/jeff.jpg', instagram: 'https://instagram.com/jeffplebs' }
+    { name: 'Jeff Plebs', role: 'Especialista BTC e WEB3', img: '/assets/jeff.jpg', instagram: 'https://instagram.com/jeffplebs' },
+    { name: 'Paula Scrok', role: ' Especialista em Defi e Airdrops', img: '/assets/defi.jpeg', instagram: 'https://instagram.com/paulascrok' }
 ];
 
 const Palestrantes = () => {
