@@ -6,10 +6,10 @@ import { FaWaze } from 'react-icons/fa';
 
 const locais = [
     {
-        nome: '📍 Local a definir',
-        imagem: '',
-        googleMaps: '',
-        waze: '',
+        nome: '📍 R. Vilebaldo Aguiar, 133 - Cocó, Fortaleza - CE, 60192-010',
+        imagem: '/assets/local.jpeg',
+        googleMaps: 'https://www.google.com/maps?q=R.+Vilebaldo+Aguiar,+133+-+Cocó,+Fortaleza+-+CE,+60192-010',
+        waze: 'https://waze.com/ul?q=R.+Vilebaldo+Aguiar,+133+-+Cocó,+Fortaleza+-+CE,+60192-010',
         cor: 'linear-gradient(135deg, #FF8C00, #004aad)',
     }
 ];
@@ -47,6 +47,7 @@ const LocalEvento = () => {
                                 },
                             }}
                         >
+                            <img src={local.imagem} alt="Local do evento" style={{ width: '100%', borderRadius: '12px', maxHeight: '300px', objectFit: 'cover' }} />
                           
                             <Typography variant="h6" color="white" sx={{ mt: 3, fontWeight: 'bold' }}>
                                 {local.nome}
