@@ -10,6 +10,14 @@ const ingressos = [
     { titulo: 'VIP Experience', descricao: 'Acesso total, brindes exclusivos, sorteios e um jantar especial com os palestrantes.', preco: 'R$ 1000,00', cor: 'linear-gradient(135deg,rgb(3, 3, 3),rgb(0, 0, 0))', emoji: '👑' }
 ];
 
+declare global {
+    interface Window {
+      fbq: (...args: any[]) => void;
+    }
+  }
+  
+  const fbq = window.fbq;
+
 const Ingressos = () => {
     return (
         <Box id="ingressos" sx={{ background: 'linear-gradient(to right, #e69c47, #002f87)', color: '#fff', padding: '100px 20px', textAlign: 'center' }}>
@@ -32,19 +40,41 @@ const Ingressos = () => {
                     </Grid>
 
                     <Box sx={{ mt: 4, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, alignItems: 'center', justifyContent: 'center' }}>
+                        {/* Botão com Pixel - Nyk Casana */}
                         <Button 
                             href="https://wa.me/5561996701472?text=Estou%20interessado%20em%20comprar%20o%20ingresso" 
                             target="_blank" 
                             variant="contained" 
-                            sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}>
-                            <WhatsAppIcon sx={{ mr: 1}} /> Compre com Nyk Casana
+                            sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}
+                            onClick={() => {
+                                if (typeof fbq !== 'undefined') {
+                                    fbq('track', 'Lead', {
+                                        origem: 'Compre com Nyk Casana',
+                                        tipo: 'Ingresso'
+                                    });
+                                }
+                            }}
+                        >
+                            <WhatsAppIcon sx={{ mr: 1 }} /> Compre com Nyk Casana
                         </Button>
+
                         <Typography variant="h6" sx={{ color: '#fff', fontWeight: 'bold' }}>OU</Typography>
+
+                        {/* Botão com Pixel - Wellington */}
                         <Button 
                             href="https://wa.me/5561999180458?text=Estou%20interessado%20em%20comprar%20o%20ingresso" 
                             target="_blank" 
                             variant="contained" 
-                            sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}>
+                            sx={{ backgroundColor: '#25D366', color: '#fff', width: { xs: '100%', sm: '280px' }, height: '56px' }}
+                            onClick={() => {
+                                if (typeof fbq !== 'undefined') {
+                                    fbq('track', 'Lead', {
+                                        origem: 'Compre com Wellington',
+                                        tipo: 'Ingresso'
+                                    });
+                                }
+                            }}
+                        >
                             <WhatsAppIcon sx={{ mr: 1 }} /> Compre com Wellington
                         </Button>
                     </Box>

@@ -1,15 +1,18 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
+import CarroselPatrocinador from '../../components/CarrosselPatrocinador';
 import Navbar from '../../components/Navegacao';
 import Footer from '../../components/Footer';
 import Ingressos from '../../components/Ingressos';
 import BitcoinBrasilia from '../../components/carrossel';
 import Palestrantes from '../../components/Palestrantes';
 import Patrocinio from '../../components/Patrocinio';
+import Apoiadores from '../../components/Apoiadores';
 import Contato from '../../components/Contato';
 import Sobre from '../../components/sobre';
 import Local from '../../components/Local';
+
 
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -19,6 +22,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import EventIcon from "@mui/icons-material/Event";
+
 
 // Definição dos eventos para o cronograma
 const events = [
@@ -79,9 +83,10 @@ const LandingPage = () => {
                     />
                 </picture>
             </Box>
-
+            <CarroselPatrocinador/>
             <Sobre />
             <Palestrantes />
+            <Apoiadores />
             <Patrocinio />
 
             {/* Cronograma */}

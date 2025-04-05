@@ -49,7 +49,7 @@ const LocalEvento = () => {
                         >
                             <img src={local.imagem} alt="Local do evento" style={{ width: '100%', borderRadius: '12px', maxHeight: '300px', objectFit: 'cover' }} />
                           
-                            <Typography variant="h6" color="white" sx={{ mt: 3, fontWeight: 'bold' }}>
+                            <Typography variant="h6" color="white" sx={{ mt: 3, fontWeccccight: 'bold' }}>
                                 {local.nome}
                             </Typography>
                             <Box sx={{ mt: 2 }}>
