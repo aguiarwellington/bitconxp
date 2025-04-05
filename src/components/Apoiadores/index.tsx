@@ -14,7 +14,7 @@ export default function PatrocinadoresEApoiadores() {
       id="patrocinadores"
       sx={{
         py: 15,
-        px: { xs: 4, md: 10 },
+        px: { xs: 2, sm: 4, md: 10 },
         background: "linear-gradient(to right, #f7931a, #002f87)",
         textAlign: "center",
       }}
@@ -25,7 +25,7 @@ export default function PatrocinadoresEApoiadores() {
         sx={{
           fontWeight: "bold",
           color: "#fff",
-          fontSize: { xs: "35px", md: "50px" },
+          fontSize: { xs: "32px", md: "48px" },
         }}
       >
         Patrocinadores / <Box component="span" sx={{ color: "#f7931a" }}>Apoiadores</Box>
@@ -39,15 +39,16 @@ export default function PatrocinadoresEApoiadores() {
           fontSize: { xs: "14px", md: "20px" },
           mt: 1,
           mb: 6,
+          px: { xs: 1, sm: 0 },
         }}
       >
         Grandes empresas que apoiam a inovação e acreditam no potencial transformador do nosso evento.
       </Typography>
 
       {/* Primeira linha - 3 caixas */}
-      <Grid container spacing={4} justifyContent="center" maxWidth="xl" margin="0 auto" sx={{ mb: 4 }}>
+      <Grid container spacing={4} justifyContent="center" sx={{ mb: 4 }}>
         {logos.slice(0, 3).map((logo, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid item xs={12} sm={6} md={2} key={index} sx={{ px: { xs: 2, sm: 2, md: 0 } }}>
             <Card
               sx={{
                 backgroundColor: '#ffffff22',
@@ -99,15 +100,14 @@ export default function PatrocinadoresEApoiadores() {
         ))}
       </Grid>
 
-      {/* Segunda linha - 1 ou 2 caixas centralizadas */}
       <Grid
         container
         spacing={4}
         justifyContent="center"
-        sx={{ maxWidth: "1000px", mx: "auto", px: { xs: 2, sm: 4, md: 0 } }}
+        sx={{ px: { xs: 2, sm: 4, md: 0 } }}
       >
         {logos.slice(3).map((logo, index) => (
-          <Grid item xs={12} sm={10} md={6} key={index}>
+          <Grid item xs={12} sm={6} md={2} key={index}>
             <Card
               sx={{
                 backgroundColor: '#ffffff22',
