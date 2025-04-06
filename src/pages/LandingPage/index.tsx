@@ -12,7 +12,7 @@ import Apoiadores from '../../components/Apoiadores';
 import Contato from '../../components/Contato';
 import Sobre from '../../components/sobre';
 import Local from '../../components/Local';
-
+import Contador from '../../components/Contador';
 
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -78,7 +78,7 @@ const LandingPage = () => {
                             transform: 'translate(-50%, -50%)',
                             width: '100vw',
                             height: '100vh',
-                            objectFit: 'cover', // Garante que a imagem cubra toda a tela sem espaços pretos
+                            objectFit: 'cover', 
                         }}
                     />
                 </picture>
@@ -138,7 +138,8 @@ const LandingPage = () => {
                 ))}
             </Box>
 
-            <Local />               
+            <Local />
+            <Contador />               
             <Ingressos />
             <BitcoinBrasilia />
             <Contato />
