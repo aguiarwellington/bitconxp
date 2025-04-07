@@ -9,6 +9,14 @@ const logos = [
 ];
 
 export default function PatrocinadoresEApoiadores() {
+  const handleClick = (name: string) => {
+    if (window.ttq) {
+      window.ttq.track('ClickButton', {
+        content_name: `Patrocinador - ${name}`,
+      });
+    }
+  };
+
   return (
     <Box
       id="patrocinadores"
@@ -19,7 +27,6 @@ export default function PatrocinadoresEApoiadores() {
         textAlign: "center",
       }}
     >
-      {/* Título */}
       <Typography
         variant="h3"
         sx={{
@@ -45,7 +52,7 @@ export default function PatrocinadoresEApoiadores() {
         Grandes empresas que apoiam a inovação e acreditam no potencial transformador do nosso evento.
       </Typography>
 
-      {/* Primeira linha - 3 caixas */}
+      {/* Primeira linha de 3 logos */}
       <Grid container spacing={4} justifyContent="center" sx={{ mb: 4 }}>
         {logos.slice(0, 3).map((logo, index) => (
           <Grid item xs={12} sm={6} md={2} key={index} sx={{ px: { xs: 2, sm: 2, md: 0 } }}>
@@ -65,7 +72,12 @@ export default function PatrocinadoresEApoiadores() {
                 },
               }}
             >
-              <CardActionArea href={logo.url} target="_blank" sx={{ height: '100%' }}>
+              <CardActionArea
+                href={logo.url}
+                target="_blank"
+                onClick={() => handleClick(logo.name)}
+                sx={{ height: '100%' }}
+              >
                 <CardContent
                   sx={{
                     display: 'flex',
@@ -100,6 +112,7 @@ export default function PatrocinadoresEApoiadores() {
         ))}
       </Grid>
 
+      {/* Último logo centralizado */}
       <Grid
         container
         spacing={4}
@@ -124,7 +137,12 @@ export default function PatrocinadoresEApoiadores() {
                 },
               }}
             >
-              <CardActionArea href={logo.url} target="_blank" sx={{ height: '100%' }}>
+              <CardActionArea
+                href={logo.url}
+                target="_blank"
+                onClick={() => handleClick(logo.name)}
+                sx={{ height: '100%' }}
+              >
                 <CardContent
                   sx={{
                     display: 'flex',
