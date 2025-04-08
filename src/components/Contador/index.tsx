@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 
-const targetDate = new Date('2025-05-03T00:00:00');
+const targetDate = new Date(Date.UTC(2025, 4, 3, 0, 0, 0));
 
 const getTimeRemaining = () => {
-  const now = new Date().getTime();
+  const now = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000;
   const total = targetDate.getTime() - now;
 
   const seconds = Math.floor((total / 1000) % 60);
   const minutes = Math.floor((total / 1000 / 60) % 60);
   const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+  // Dias baseados em diferença de calendário (ignora hora)
+  const nowDate = new Date();
+  const eventDate = new Date(Date.UTC(2025, 4, 3));
+  const diffTime = eventDate.getTime() - Date.UTC(
+    nowDate.getUTCFullYear(),
+    nowDate.getUTCMonth(),
+    nowDate.getUTCDate()
+  );
+  const days = Math.round(diffTime / (1000 * 60 * 60 * 24));
 
   return { total, days, hours, minutes, seconds };
 };
+
 
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());

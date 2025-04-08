@@ -13,6 +13,7 @@ import Contato from '../../components/Contato';
 import Sobre from '../../components/sobre';
 import Local from '../../components/Local';
 import Contador from '../../components/Contador';
+import FormEmail from '../../components/FormEmail';
 
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -143,6 +144,8 @@ const LandingPage = () => {
             <Ingressos />
             <BitcoinBrasilia />
             <Contato />
+            <FormEmail />
+
             <Footer />
         </Box>
     );
