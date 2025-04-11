@@ -25,6 +25,15 @@ const contatos = [
         foto: "/assets/well01.jpg"
     },
     {
+        nome: "Wellington Carvalho",
+        telefones: ["61 992045816"], 
+        instagram: "@wellington_carvalho",
+        instagramLink: "https://instagram.com/wellington_carvalho008",
+        twitter: null,
+        twitterLink: null,
+        foto: "/assets/well.jpg"
+    },
+    {
         nome: "E-mails",
         emails: ["marketing@bitconxp.com","parceria@bitconxp.com","suporte@bitconxp.com "],
         foto: "/assets/email.webp" // Ícone do Gmail

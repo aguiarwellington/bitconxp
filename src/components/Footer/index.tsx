@@ -81,6 +81,9 @@ const Footer = () => {
                     <Typography variant="body2" sx={{ color: '#ddd' }}>
                         © 2025 Evento BitCon XP. Todos os direitos reservados.
                     </Typography>
+                    <Typography variant="body2" sx={{ color: '#ddd' }}>
+                       Desenvolvido by Wellington Carvalho.
+                    </Typography>
                 </Grid>
             </Grid>
         </Box>
