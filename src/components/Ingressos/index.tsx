@@ -117,38 +117,60 @@ const Ingressos = () => {
             ))}
           </Grid>
 
-          {/* Botão estilizado - Sympla */}
-          <Box
-            sx={{
-              mt: 4,
-              display: 'flex',
-              justifyContent: 'center'
-            }}
-          >
-            <motion.a
-              href="https://www.sympla.com.br/evento/bitconxp-bitcoin-conference-experience/2862823"
-              target="_blank"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '16px 24px',
-                borderRadius: '12px',
-                fontWeight: 600,
-                textDecoration: 'none',
-                color: '#fff',
-                background: 'linear-gradient(135deg, #f5af19, #e69c47)',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
-                fontSize: '1rem',
-                width: '100%',
-                maxWidth: 300
-              }}
-              onClick={() => handleClick('Comprar Sympla')}
-            >
-              Comprar ingresso no Sympla <LaunchIcon sx={{ ml: 1 }} />
-            </motion.a>
+          <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+            <Grid container spacing={2} justifyContent="center" maxWidth={600}>
+              <Grid item xs={12} sm={7}>
+                <motion.a
+                  href="https://www.sympla.com.br/evento/bitconxp-bitcoin-conference-experience/2862823"
+                  target="_blank"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '16px 24px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    color: '#fff',
+                    background: 'linear-gradient(135deg, #f5af19, #e69c47)',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                    fontSize: '1rem',
+                    width: '100%'
+                  }}
+                  onClick={() => handleClick('Comprar Sympla')}
+                >
+                  Comprar no Sympla <LaunchIcon sx={{ ml: 1 }} />
+                </motion.a>
+              </Grid>
+
+              <Grid item xs={10} sm={7} >
+                <motion.a
+                  href="https://wa.me/5561999180458"
+                  target="_blank"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '16px 24px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    color: '#fff',
+                    background: 'linear-gradient(135deg, #25D366, #128C7E)',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                    fontSize: '1rem',
+                    width: '100%'
+                  }}
+                  onClick={() => handleClick('WhatsApp')}
+                >
+                  Falar no WhatsApp <LaunchIcon sx={{ ml: 1 }} />
+                </motion.a>
+              </Grid>
+            </Grid>
           </Box>
         </Paper>
       </motion.div>
