@@ -1,6 +1,12 @@
 import React from 'react';
 import { Box, Typography, Grid, Card, CardActionArea, CardContent } from '@mui/material';
 
+declare global {
+  interface Window {
+    fbq: (...args: any[]) => void;
+  }
+}
+
 const logos = [
   { name: 'DIY Sec Lab', src: "/assets/diy.png", url: "https://diyseclab.io" },
   { name: 'Alfred', src: "/assets/logoalfred.png", url: "https://www.alfredp2p.io/pt" },
@@ -10,8 +16,8 @@ const logos = [
 
 export default function PatrocinadoresEApoiadores() {
   const handleClick = (name: string) => {
-    if (window.ttq) {
-      window.ttq.track('ClickButton', {
+    if (window.fbq) {
+      window.fbq('trackCustom', 'ClickPatrocinador', {
         content_name: `Patrocinador - ${name}`,
       });
     }
@@ -55,7 +61,7 @@ export default function PatrocinadoresEApoiadores() {
       {/* Primeira linha de 3 logos */}
       <Grid container spacing={4} justifyContent="center" sx={{ mb: 4 }}>
         {logos.slice(0, 3).map((logo, index) => (
-          <Grid item xs={12} sm={6} md={2} key={index} sx={{ px: { xs: 2, sm: 2, md: 0 } }}>
+          <Grid item xs={12} sm={6} md={2} key={index}>
             <Card
               sx={{
                 backgroundColor: '#ffffff22',
@@ -113,12 +119,7 @@ export default function PatrocinadoresEApoiadores() {
       </Grid>
 
       {/* Último logo centralizado */}
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        sx={{ px: { xs: 2, sm: 4, md: 0 } }}
-      >
+      <Grid container spacing={4} justifyContent="center">
         {logos.slice(3).map((logo, index) => (
           <Grid item xs={12} sm={6} md={2} key={index}>
             <Card

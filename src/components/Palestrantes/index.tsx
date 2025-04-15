@@ -2,6 +2,12 @@ import React from 'react';
 import { Box, Typography, Grid, Card, CardContent, Avatar, IconButton } from '@mui/material';
 import { FaInstagram } from 'react-icons/fa';
 
+declare global {
+  interface Window {
+    fbq: (...args: any[]) => void;
+  }
+}
+
 const speakers = [
   { name: 'Nyk Casana', role: 'Organizador', img: '/assets/nyk01.jpg', instagram: 'https://instagram.com/nykcasana' },
   { name: 'Wellington Neves', role: 'Organizador', img: '/assets/well01.jpg', instagram: 'https://instagram.com/neveslmjr.wellington' },
@@ -17,8 +23,8 @@ const speakers = [
 
 const Palestrantes = () => {
   const handleInstagramClick = (name: string) => {
-    if (window.ttq) {
-      window.ttq.track('ClickButton', {
+    if (window.fbq) {
+      window.fbq('trackCustom', 'ClickInstagram', {
         content_name: `Instagram - ${name}`,
       });
     }

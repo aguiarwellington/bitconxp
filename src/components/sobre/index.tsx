@@ -6,14 +6,21 @@ import {
 } from '@mui/material';
 import { motion } from 'framer-motion';
 
+declare global {
+  interface Window {
+    fbq: (...args: any[]) => void;
+  }
+}
+
 const Sobre = () => {
   const handleClick = () => {
-    // 🔥 Rastreia o clique como Lead ou ClickButton
-    if (window.ttq) {
-      window.ttq.track('Lead', {
+    // 🔥 Facebook Pixel: rastreia clique no botão "Adquirir Ingresso"
+    if (window.fbq) {
+      window.fbq('track', 'Lead', {
         content_name: 'AdquirirIngresso',
       });
     }
+
     // Continua com o scroll para #ingressos
     const element = document.getElementById('ingressos');
     if (element) {

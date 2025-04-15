@@ -13,6 +13,12 @@ const menuItems = [
   { label: 'Ingressos', path: 'ingressos' },
 ];
 
+declare global {
+  interface Window {
+    fbq: (...args: any[]) => void;
+  }
+}
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -29,9 +35,9 @@ const Navbar = () => {
         setActiveSection(id);
         setMobileOpen(false);
 
-        // 🎯 Evento TikTok: rastrear clique no menu
-        if (window.ttq) {
-          window.ttq.track('ViewContent', {
+        // 🎯 Facebook Pixel: rastrear navegação entre seções
+        if (window.fbq) {
+          window.fbq('track', 'ViewContent', {
             content_name: id,
           });
         }
@@ -61,8 +67,9 @@ const Navbar = () => {
   }, []);
 
   const handleParticiparClick = () => {
-    if (window.ttq) {
-      window.ttq.track('Lead'); // 🎯 Evento TikTok: lead ao clicar em Participar
+    // 🎯 Facebook Pixel: rastrear clique no botão "Participar"
+    if (window.fbq) {
+      window.fbq('track', 'Lead');
     }
     handleScroll('ingressos');
   };
